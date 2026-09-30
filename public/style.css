@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
@@ -31,6 +35,31 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 0;
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  word-break: break-word;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-bar h1 {
+  flex: 1;
+  min-width: 0;
+}
+
+.back-btn {
+  flex-shrink: 0;
+  width: auto;
+  margin-top: 0;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  background: transparent;
+  border: 1px solid #4a4d75;
+  color: #c9c9ff;
+  white-space: nowrap;
 }
 
 h2 {
@@ -205,4 +234,41 @@ button:disabled {
 
 .reveal-location strong {
   color: #ffd166;
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 14px 8px;
+  }
+
+  .card,
+  .share-box {
+    padding: 12px;
+  }
+
+  .role-card {
+    padding: 24px 14px;
+  }
+
+  .role-value {
+    font-size: 1.5rem;
+  }
+
+  .share-row {
+    flex-direction: column;
+  }
+
+  .share-row button {
+    width: 100%;
+  }
+
+  .back-btn {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .players-list li {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
 }

@@ -87,16 +87,26 @@ document.getElementById("btn-start").addEventListener("click", () => {
   socket.emit("startGame");
 });
 
-document.getElementById("btn-leave-lobby").addEventListener("click", leaveRoom);
-document.getElementById("btn-leave-game").addEventListener("click", leaveRoom);
-document.getElementById("btn-leave-reveal").addEventListener("click", leaveRoom);
+document.getElementById("btn-home-lobby").addEventListener("click", leaveRoom);
+document.getElementById("btn-home-game").addEventListener("click", leaveRoom);
+document.getElementById("btn-home-reveal").addEventListener("click", leaveRoom);
 
 function leaveRoom() {
+  window.history.pushState({}, "", "/");
+  leaveRoomSilently();
+}
+
+function leaveRoomSilently() {
   socket.emit("leaveRoom");
   currentRoom = null;
-  window.history.pushState({}, "", "/");
   showScreen("home");
 }
+
+window.addEventListener("popstate", () => {
+  if (!codeFromUrl() && currentRoom) {
+    leaveRoomSilently();
+  }
+});
 
 // ---------- JOGO ----------
 

@@ -37,7 +37,10 @@
 
     <!-- SALA DE ESPERA -->
     <section id="screen-lobby" class="screen hidden">
-      <h1>Sala <span id="lobby-code"></span></h1>
+      <div class="top-bar">
+        <button id="btn-home-lobby" class="back-btn">← Início</button>
+        <h1>Sala <span id="lobby-code"></span></h1>
+      </div>
       <div class="share-box">
         <p>Envie este link para seus amigos:</p>
         <div class="share-row">
@@ -52,12 +55,14 @@
       <button id="btn-start" class="hidden">Sortear e começar</button>
       <p id="lobby-hint" class="hint"></p>
       <p id="lobby-error" class="error"></p>
-      <button id="btn-leave-lobby" class="secondary">Saltar da sala</button>
     </section>
 
     <!-- RODADA EM ANDAMENTO -->
     <section id="screen-game" class="screen hidden">
-      <h1>Rodada em andamento</h1>
+      <div class="top-bar">
+        <button id="btn-home-game" class="back-btn">← Início</button>
+        <h1>Rodada em andamento</h1>
+      </div>
       <div id="role-card" class="role-card">
         <p class="role-label">Sua identidade:</p>
         <p id="role-value" class="role-value">???</p>
@@ -72,12 +77,14 @@
       <div id="host-controls" class="hidden">
         <button id="btn-reveal">Revelar rodada</button>
       </div>
-      <button id="btn-leave-game" class="secondary">Saltar da sala</button>
     </section>
 
     <!-- REVELAÇÃO -->
     <section id="screen-reveal" class="screen hidden">
-      <h1>Revelação</h1>
+      <div class="top-bar">
+        <button id="btn-home-reveal" class="back-btn">← Início</button>
+        <h1>Revelação</h1>
+      </div>
       <p class="reveal-location">Local: <strong id="reveal-location"></strong></p>
       <p class="reveal-spy">Espião: <strong id="reveal-spy"></strong></p>
 
@@ -87,7 +94,6 @@
       <div id="host-controls-reveal" class="hidden">
         <button id="btn-new-round">Nova rodada (mesma sala)</button>
       </div>
-      <button id="btn-leave-reveal" class="secondary">Sair da sala</button>
     </section>
 
   </div>
