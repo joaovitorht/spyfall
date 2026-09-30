@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spyfall Online</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- TELA INICIAL -->
+    <section id="screen-home" class="screen">
+      <h1>🕵️ Spyfall</h1>
+      <p class="subtitle">Descubra o espião. Ou seja o espião.</p>
+
+      <div class="card">
+        <h2>Criar sala</h2>
+        <label>Seu nome</label>
+        <input id="create-name" type="text" maxlength="24" placeholder="Digite seu nome" />
+        <label>Número de jogadores esperado (3 a 10)</label>
+        <input id="create-max" type="number" min="3" max="10" value="6" />
+        <button id="btn-create">Criar sala</button>
+      </div>
+
+      <div class="card">
+        <h2>Entrar em uma sala</h2>
+        <label>Seu nome</label>
+        <input id="join-name" type="text" maxlength="24" placeholder="Digite seu nome" />
+        <label>Código da sala</label>
+        <input id="join-code" type="text" maxlength="5" placeholder="Ex: AB3XZ" style="text-transform:uppercase" />
+        <button id="btn-join">Entrar</button>
+      </div>
+
+      <p id="home-error" class="error"></p>
+    </section>
+
+    <!-- SALA DE ESPERA -->
+    <section id="screen-lobby" class="screen hidden">
+      <h1>Sala <span id="lobby-code"></span></h1>
+      <div class="share-box">
+        <p>Envie este link para seus amigos:</p>
+        <div class="share-row">
+          <input id="share-link" type="text" readonly />
+          <button id="btn-copy">Copiar</button>
+        </div>
+      </div>
+
+      <h2>Jogadores (<span id="lobby-count"></span>/<span id="lobby-max"></span>)</h2>
+      <ul id="lobby-players" class="players-list"></ul>
+
+      <button id="btn-start" class="hidden">Sortear e começar</button>
+      <p id="lobby-hint" class="hint"></p>
+      <p id="lobby-error" class="error"></p>
+      <button id="btn-leave-lobby" class="secondary">Saltar da sala</button>
+    </section>
+
+    <!-- RODADA EM ANDAMENTO -->
+    <section id="screen-game" class="screen hidden">
+      <h1>Rodada em andamento</h1>
+      <div id="role-card" class="role-card">
+        <p class="role-label">Sua identidade:</p>
+        <p id="role-value" class="role-value">???</p>
+        <p id="role-location" class="role-location"></p>
+      </div>
+
+      <p class="game-tip">
+        Façam perguntas entre si sobre o local. Quem for o espião deve tentar descobrir o local sem ser
+        descoberto; os demais devem identificar o espião sem revelar o local em excesso.
+      </p>
+
+      <div id="host-controls" class="hidden">
+        <button id="btn-reveal">Revelar rodada</button>
+      </div>
+      <button id="btn-leave-game" class="secondary">Saltar da sala</button>
+    </section>
+
+    <!-- REVELAÇÃO -->
+    <section id="screen-reveal" class="screen hidden">
+      <h1>Revelação</h1>
+      <p class="reveal-location">Local: <strong id="reveal-location"></strong></p>
+      <p class="reveal-spy">Espião: <strong id="reveal-spy"></strong></p>
+
+      <h2>Papéis da rodada</h2>
+      <ul id="reveal-list" class="players-list"></ul>
+
+      <div id="host-controls-reveal" class="hidden">
+        <button id="btn-new-round">Nova rodada (mesma sala)</button>
+      </div>
+      <button id="btn-leave-reveal" class="secondary">Sair da sala</button>
+    </section>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

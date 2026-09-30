@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(160deg, #1b1f3a, #0d0e1a);
+  color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+#app {
+  width: 100%;
+  max-width: 480px;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #c9c9ff;
+}
+
+.subtitle {
+  text-align: center;
+  color: #a0a0c0;
+  margin-top: -8px;
+}
+
+.card {
+  background: #1e2140;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: #b7b7d9;
+  margin: 10px 0 4px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #3a3d66;
+  background: #12142b;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid #6c63ff;
+}
+
+button {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #6c63ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+button:hover {
+  opacity: 0.88;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid #4a4d75;
+  color: #c9c9ff;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff7b7b;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.hint {
+  color: #a0a0c0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.share-box {
+  background: #1e2140;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.share-row {
+  display: flex;
+  gap: 8px;
+}
+
+.share-row input {
+  flex: 1;
+}
+
+.share-row button {
+  width: auto;
+  margin-top: 0;
+  padding: 10px 16px;
+}
+
+.players-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.players-list li {
+  background: #1e2140;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  font-size: 0.75rem;
+  background: #6c63ff;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.role-card {
+  background: radial-gradient(circle at top, #2d2f63, #12142b);
+  border-radius: 16px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.role-label {
+  color: #a0a0c0;
+  margin: 0 0 8px;
+}
+
+.role-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffd166;
+}
+
+.role-location {
+  margin-top: 10px;
+  color: #c9c9ff;
+  font-size: 1.1rem;
+}
+
+.game-tip {
+  color: #a0a0c0;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.reveal-location,
+.reveal-spy {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.reveal-spy strong {
+  color: #ff7b7b;
+}
+
+.reveal-location strong {
+  color: #ffd166;
+}
